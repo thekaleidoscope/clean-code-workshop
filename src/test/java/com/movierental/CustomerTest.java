@@ -32,7 +32,7 @@ public class CustomerTest {
     public void newCustomerWithRentalOneMovieFor1DayShouldGetAppropriateRental(){
 
         Customer customer = new Customer("newCustomer");
-        Movie firstMovie = new Movie("firstMovie",100);
+        Movie firstMovie = new Movie("firstMovie",Movie.REGULAR);
         Rental rental = new Rental(firstMovie, 1);
         customer.addRental(rental);
 
@@ -40,8 +40,8 @@ public class CustomerTest {
         String result = customer.statement();
         System.out.println(result);
         assertEquals("Rental Record for newCustomer\n" +
-                "\tfirstMovie\t0.0\n" +
-                "Amount owed is 0.0\n" +
+                "\tfirstMovie\t2.0\n" +
+                "Amount owed is 2.0\n" +
                 "You earned 1 frequent renter points",result);
 
     }
